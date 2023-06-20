@@ -2,6 +2,10 @@
 
 class User extends \ActiveRecord\Model
 {
+    static $validates_uniqueness_of = array(
+        array('username', 'message' => 'Este username ja existe'),
+    );
+
     static $validates_presence_of = array(
         array('username'),
         array('password'),

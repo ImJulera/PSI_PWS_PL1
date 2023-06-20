@@ -94,7 +94,7 @@
                         <a href="./?c=empresa&a=index" class="nav-link">
                             <i class="nav-icon fas fa-copy"></i>
                             <p>
-                                Faturas
+                                Folhas Obra
                                 <i class="right fas fa-angle-left"></i>
                             </p>
                         </a>
@@ -106,7 +106,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="pages/charts/chartjs.html" class="nav-link">
+                                <a href="./?c=folha&a=index" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Histórico</p>
                                 </a>
@@ -152,14 +152,14 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="pages/charts/chartjs.html" class="nav-link">
+                                <a href="" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Clientes</p>
                                     <i class="right fas fa-angle-left"></i>
                                 </a>
                                 <ul class="nav nav-treeview">
                                     <li class="nav-item">
-                                        <a href="pages/charts/chartjs.html" class="nav-link">
+                                        <a href="./?c=user&a=create&tipo=cliente" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Registar</p>
                                         </a>
@@ -167,13 +167,14 @@
                                 </ul>
                                 <ul class="nav nav-treeview">
                                     <li class="nav-item">
-                                        <a href="pages/charts/chartjs.html" class="nav-link">
+                                        <a href="./?c=user&a=index&tipo=cliente" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Gerir</p>
                                         </a>
                                     </li>
                                 </ul>
                             </li>
+                            <?php if($_SESSION['role'] != 'funcionario'){ ?>
                             <li class="nav-item">
                                 <a href="pages/charts/chartjs.html" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
@@ -182,7 +183,7 @@
                                 </a>
                                 <ul class="nav nav-treeview">
                                     <li class="nav-item">
-                                        <a href="pages/charts/chartjs.html" class="nav-link">
+                                        <a href="./?c=user&a=create&tipo=funcionario" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Registar</p>
                                         </a>
@@ -190,13 +191,14 @@
                                 </ul>
                                 <ul class="nav nav-treeview">
                                     <li class="nav-item">
-                                        <a href="pages/charts/chartjs.html" class="nav-link">
+                                        <a href="./?c=user&a=index&tipo=funcionario" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Gerir</p>
                                         </a>
                                     </li>
                                 </ul>
                             </li>
+                            <?php }?>
                         </ul>
                 </ul>
             </nav>
