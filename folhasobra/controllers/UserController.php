@@ -32,10 +32,10 @@ class UserController extends BaseAuthController
                 $user->save();
                 $this->redirectToRoute('user', 'index', ['tipo' => $user->role]);
             } else {
-                $this->renderView('user', 'create', ['user' => $user]);
+                $this->renderView('user', 'create', ['user' => $user, 'tipo' => $user->role]);
             }
         } else{
-            $this->renderView('user', 'create');
+            $this->renderView('user', 'create', ['tipo' => $user->role]);
         }
     }
 
