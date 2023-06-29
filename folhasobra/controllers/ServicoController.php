@@ -58,4 +58,11 @@ class ServicoController extends BaseAuthController
             $this->renderView('servico', 'edit', ['ivas' => $ivas]);
         }
     }
+
+    public function delete($id){
+        $servico = Servico::find($id);
+
+        $servico->delete();
+        $this->redirectToRoute('servico', 'index');
+    }
 }

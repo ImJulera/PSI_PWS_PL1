@@ -45,7 +45,7 @@
                                         <td><?= $servico->iva->percentagem ?></td>
                                         <td>
                                             <a href="?c=servico&a=edit&id=<?=$servico->id?>" class="btn-sm text-decoration-none btn-warning" ><i class="fa fa-pen"></i></a>
-                                            <a href="?c=servico&a=destroy&id=<?=$servico->id?>" class="btn-sm text-decoration-none	btn-danger" ><i class="fa fa-trash"></i></a>
+                                            <a href="?c=servico&a=delete&id=<?=$servico->id?>" class="btn-sm text-decoration-none	btn-danger" ><i class="fa fa-trash"></i></a>
                                         </td>
                                     </tr>
                                 <?php }?>
