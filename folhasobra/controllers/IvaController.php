@@ -4,6 +4,10 @@ require_once './models/Iva.php';
 
 class IvaController extends BaseAuthController
 {
+    public function __construct() {
+        $this->loginFilterByRole(['admin', 'funcionario']);
+    }
+
     public function index(){
         $ivas = Iva::all();
         $this->renderView('Iva', 'index', ['ivas' => $ivas]);

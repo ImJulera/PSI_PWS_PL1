@@ -5,6 +5,10 @@ require_once './models/Iva.php';
 
 class ServicoController extends BaseAuthController
 {
+    public function __construct() {
+        $this->loginFilterByRole(['admin', 'funcionario']);
+    }
+
     public function index(){
         $servicos = Servico::all();
         $this->renderView('servico', 'index', ['servicos' => $servicos]);

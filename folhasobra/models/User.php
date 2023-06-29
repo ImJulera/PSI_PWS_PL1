@@ -17,4 +17,17 @@ class User extends \ActiveRecord\Model
         array('localidade'),
         array('role')
     );
+
+    public function countClients(){
+        $users = User::all();
+        $clientTotal = 0;
+
+        foreach ($users as $user){
+            if($user->role == 'cliente'){
+                $clientTotal += 1;
+            }
+        }
+
+        return $clientTotal;
+    }
 }

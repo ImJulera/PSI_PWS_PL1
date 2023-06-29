@@ -34,6 +34,7 @@
                                     <th>Data</th>
                                     <th>Valor Total</th>
                                     <th>Iva Total</th>
+                                    <th>Total</th>
                                     <th>Estado</th>
                                     <th>Cliente</th>
                                     <th>Funcionário</th>
@@ -44,12 +45,20 @@
                                     <?php foreach ($folhas as $folha) { ?>
                                         <tr>
                                             <td><?= $folha->id?></td>
-                                            <td><?= $folha->data?></td>
-                                            <td><?= $folha->valor_total?></td>
-                                            <td><?= $folha->iva_total?></td>
+                                            <td><?= date_format($folha->data, 'Y/m/d H:i:s') ?></td>
+                                            <td><?= $folha->valor_total?>€</td>
+                                            <td><?= $folha->iva_total?>€</td>
+                                            <td><?= $folha->valor_total + $folha->iva_total?>€</td>
                                             <td><?= $folha->estado?></td>
                                             <td><?= $folha->cliente->username?></td>
                                             <td><?= $folha->user->username?></td>
+                                            <td>
+                                                <?php  if($folha->estado == 'em lançamento' && $_SESSION['role'] != 'cliente'){ ?>
+                                                    <a href="?c=linhaObra&a=create&idFolha=<?=$folha->id?>" class="btn-sm text-decoration-none btn-warning" ><i class="fa fa-pen"></i></a>
+                                                <?php }elseif($folha->estado == 'emitida' || $folha->estado == 'paga'){?>
+                                                    <a href="?c=folha&a=show&idFolha=<?=$folha->id?>" class="btn-sm text-decoration-none btn-success" ><i class="fa fa-eye"></i></a>
+                                                <?php }?>
+                                            </td>
                                         </tr>
                                     <?php } ?>
                                 </tbody>

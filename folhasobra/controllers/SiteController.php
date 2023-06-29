@@ -5,6 +5,6 @@ class SiteController extends BaseController
 {
     function index()
     {
-        $this->renderView('site', 'index', [], 'login');
+        $this->renderView('site', 'index', [], 'site');
     }
 }

@@ -5,7 +5,6 @@
             <div class="row mb-2">
                 <div class="col-sm-6">
                     <h1>Empresas</h1>
-                    <a href="./?c=empresa&a=create" class="btn btn-primary float-left mt-3">Criar</a>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -36,6 +35,9 @@
                                 <th>Código Postal</th>
                                 <th>Localidade</th>
                                 <th>Capital Social</th>
+                                <?php if($_SESSION['role'] == 'admin'){ ?>
+                                <th>Ações</th>
+                                <?php } ?>
                             </tr>
                             </thead>
                             <tbody>
@@ -50,10 +52,11 @@
                                         <td><?= $empresa->codigo_postal ?></td>
                                         <td><?= $empresa->localidade ?></td>
                                         <td><?= $empresa->capital_social ?></td>
+                                        <?php if($_SESSION['role'] == 'admin'){ ?>
                                         <td>
-                                            <a href="?c=empresa&a=edit&id=<?=$empresa->id?>" class="btn-sm text-decoration-none btn-warning" ><i class="fa-solid fa-pen-to-square"></i></a>
-                                            <a href="?c=empresa&a=destroy&id=<?=$empresa->id?>" class="btn-sm text-decoration-none	btn-danger" ><i class="fa-solid fa-xmark"></i></a>
+                                            <a href="?c=empresa&a=edit&idEmpresa=<?=$empresa->id?>" class="btn-sm text-decoration-none btn-warning" ><i class="fa fa-pen"></i></a>
                                         </td>
+                                        <?php } ?>
                                     </tr>
                             <?php }?>
                             </tbody>

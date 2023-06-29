@@ -37,9 +37,9 @@
                                         <div class="row">
                                             <div class="col-12">
                                                 <h3>
-                                                    <img src="./public/img/logo.png"> <br>Folhas Obra, Inc.
+                                                    <img src="./public/img/folhaobra_logo_horizontal.png"> <br>Folhas Obra, Inc.
                                                 </h3>
-                                                <h5>Date: 2/10/2014</h5>
+                                                <h5><?php echo date("Y-m-d"); ?></h5>
                                             </div>
                                             <!-- /.col -->
                                         </div>
@@ -74,7 +74,7 @@
                                                 <table class="table table-striped">
                                                     <thead>
                                                     <tr>
-                                                        <th>Ref</th>
+                                                        <th>Referécia</th>
                                                         <th>Descrição</th>
                                                         <th>Qtd</th>
                                                         <th>Preço Uni.</th>
