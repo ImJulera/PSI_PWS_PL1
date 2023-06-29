@@ -9,6 +9,8 @@ require_once './controllers/IvaController.php';
 require_once './controllers/ServicoController.php';
 require_once './controllers/UserController.php';
 require_once './controllers/FolhaController.php';
+require_once './controllers/LinhaObraController.php';
+
 
 return [
     'defaultRoute' => ['GET', 'SiteController', 'index'],
@@ -24,7 +26,9 @@ return [
         'index' => ['GET', 'BackofficeController', 'index'],
     ],
     'empresa' => [
-        'index' => ['GET', 'EmpresaController', 'index']
+        'index' => ['GET', 'EmpresaController', 'index'],
+        'edit' => ['GET', 'EmpresaController', 'edit'],
+        'update' => ['POST', 'EmpresaController', 'update']
     ],
     'iva' => [
         'index' => ['GET', 'IvaController', 'index'],
@@ -53,9 +57,22 @@ return [
     'folha' => [
         'index' => ['GET', 'FolhaController', 'index'],
         'create' => ['GET', 'FolhaController', 'create'],
-        'store' => ['POST', 'FolhaController', 'store'],
-        'edit' => ['GET', 'FolhaController', 'edit'],
-        'update' => ['POST', 'FolhaController', 'update'],
-        'delete' => ['GET', 'FolhaController', 'delete']
+        'store' => ['GET', 'FolhaController', 'store'],
+        'update' => ['GET', 'FolhaController', 'update'],
+        'show' => ['GET', 'FolhaController', 'show'],
+        'selectClient' => ['GET', 'FolhaController', 'selectClient'],
+        'print' => ['GET', 'FolhaController', 'print'],
+        'pay' => ['GET', 'FolhaController', 'pay'],
+    ],
+    'linhaObra' => [
+        'index' => ['GET', 'LinhaObraController', 'index'],
+        'create' => ['GET', 'LinhaObraController', 'create'],
+        'store' => ['POST', 'LinhaObraController', 'store'],
+        'edit' => ['GET', 'LinhaObraController', 'edit'],
+        'update' => ['POST', 'LinhaObraController', 'update'],
+        'delete' => ['GET', 'LinhaObraController', 'delete'],
+        'selectServico' => ['POST', 'LinhaObraController', 'selectServico'],
+        'searchServico' => ['POST', 'LinhaObraController', 'selectServico'],
+        'addServico' => ['POST', 'LinhaObraController', 'addServico'],
     ],
 ];

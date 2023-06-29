@@ -38,6 +38,9 @@
                                     <label for="email">Email</label>
                                     <input type="text" class="form-control" id="email" name="email" value="<?php if(isset($user)){echo $user->email; }?>"><?php if(isset($user->errors)){ echo $user->errors->on('email');} ?>
                                 </div>
+                                <?php
+                                    if($user->id != $_SESSION['id'] || $user->role == 'admin'){
+                                ?>
                                 <div class="form-group">
                                     <label for="telefone">Telefone</label>
                                     <input type="text" class="form-control" id="telefone" name="telefone" value="<?php if(isset($user)){echo $user->telefone; }?>"><?php if(isset($user->errors)){ echo $user->errors->on('telefone');} ?>
@@ -62,6 +65,7 @@
                                     <label for="role">Role</label>
                                     <input readonly type="text" class="form-control" id="role" name="role" value="<?php  if(isset($tipo)){echo $tipo; } elseif(isset($user)){echo $user->role; }?>"><?php if(isset($user->errors)){ echo $user->errors->on('role');} ?>
                                 </div>
+                                <?php } ?>
                             </div>
                             <!-- /.card-body -->
 

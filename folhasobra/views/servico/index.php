@@ -32,6 +32,7 @@
                                     <th>Descrição</th>
                                     <th>Preço</th>
                                     <th>Iva</th>
+                                    <th>Opções</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -43,8 +44,8 @@
                                         <td><?= $servico->preco ?></td>
                                         <td><?= $servico->iva->percentagem ?></td>
                                         <td>
-                                            <a href="?c=servico&a=edit&id=<?=$servico->id?>" class="btn-sm text-decoration-none btn-warning" ><i class="fa-solid fa-pen-to-square"></i></a>
-                                            <a href="?c=servico&a=destroy&id=<?=$servico->id?>" class="btn-sm text-decoration-none	btn-danger" ><i class="fa-solid fa-xmark"></i></a>
+                                            <a href="?c=servico&a=edit&id=<?=$servico->id?>" class="btn-sm text-decoration-none btn-warning" ><i class="fa fa-pen"></i></a>
+                                            <a href="?c=servico&a=destroy&id=<?=$servico->id?>" class="btn-sm text-decoration-none	btn-danger" ><i class="fa fa-trash"></i></a>
                                         </td>
                                     </tr>
                                 <?php }?>

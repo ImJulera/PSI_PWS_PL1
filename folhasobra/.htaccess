@@ -1,0 +1,9 @@
+options -indexes
+order deny,allow
+deny from all
+<Files "./">
+    allow from all
+</Files>
+<Files "index.php">
+    allow from all
+</Files>
